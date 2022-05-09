@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>Sagan's game.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Sagan's game.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">random</span>
+<span class="s0">from </span><span class="s1">time </span><span class="s0">import </span><span class="s1">sleep</span>
+<span class="s1">list = [</span><span class="s2">'innocence'</span><span class="s0">, </span><span class="s2">'guilt'</span><span class="s1">]</span>
+<span class="s1">listf = [</span><span class="s2">'innocent'</span><span class="s0">, </span><span class="s2">'guilty'</span><span class="s1">]</span>
+<span class="s1">computer = random.choice(list)</span>
+<span class="s1">computerf = random.choice(listf)</span>
+<span class="s1">print(</span><span class="s2">'Police officer: </span><span class="s0">\033</span><span class="s2">[1;31mYour friend has delated you. What do you have to say?</span><span class="s0">\033</span><span class="s2">[m'</span><span class="s1">)</span>
+<span class="s1">sleep(</span><span class="s3">2</span><span class="s1">)</span>
+<span class="s1">person = str(input(</span><span class="s2">'</span><span class="s0">\033</span><span class="s2">[1;97mAre you guilty?[Y/N] </span><span class="s0">\033</span><span class="s2">[m'</span><span class="s1">)).lower().strip()[</span><span class="s3">0</span><span class="s1">]</span>
+<span class="s1">personc = str(input(</span><span class="s2">'</span><span class="s0">\033</span><span class="s2">[1;97mIs your friend innocent or guilty?[I/G] '</span><span class="s1">)).strip().lower()[</span><span class="s3">0</span><span class="s1">]</span>
+<span class="s1">sleep(</span><span class="s3">1</span><span class="s1">)</span>
+<span class="s1">print(</span><span class="s2">f'The friend claimed </span><span class="s0">{</span><span class="s2">&quot;being innocent&quot; </span><span class="s0">if </span><span class="s1">computer == </span><span class="s2">&quot;innocence&quot; </span><span class="s0">else </span><span class="s2">&quot;being guilty&quot;</span><span class="s0">}</span><span class="s2">.'</span><span class="s1">)</span>
+<span class="s1">sleep(</span><span class="s3">1</span><span class="s1">)</span>
+<span class="s1">print(</span><span class="s2">f'You claimed </span><span class="s0">{</span><span class="s2">&quot;innocence&quot; </span><span class="s0">if </span><span class="s1">person == </span><span class="s2">&quot;n&quot; </span><span class="s0">else </span><span class="s2">&quot;you are guilty&quot;</span><span class="s0">}</span><span class="s2">.'</span><span class="s1">)</span>
+<span class="s1">sleep(</span><span class="s3">1</span><span class="s1">)</span>
+<span class="s1">print(</span><span class="s2">f'Your friend claimed you are </span><span class="s0">{</span><span class="s2">&quot;innocent&quot; </span><span class="s0">if </span><span class="s1">computerf == </span><span class="s2">&quot;innocent&quot; </span><span class="s0">else </span><span class="s2">&quot;a criminal&quot;</span><span class="s0">}</span><span class="s2">.'</span><span class="s1">)</span>
+<span class="s1">sleep(</span><span class="s3">1</span><span class="s1">)</span>
+<span class="s1">print(</span><span class="s2">f'You affirmed your friend is </span><span class="s0">{</span><span class="s2">&quot;culpable&quot; </span><span class="s0">if </span><span class="s1">personc == </span><span class="s2">&quot;g&quot; </span><span class="s0">else </span><span class="s2">&quot;innocuous&quot;</span><span class="s0">}</span><span class="s2">.</span><span class="s0">\033</span><span class="s2">[m'</span><span class="s1">)</span>
+<span class="s1">sleep(</span><span class="s3">2</span><span class="s1">)</span>
+<span class="s1">print(</span><span class="s2">'Police officer: </span><span class="s0">\n\033</span><span class="s2">[7;57m'</span><span class="s1">)</span>
+<span class="s0">if </span><span class="s1">computer == </span><span class="s2">'innocence' </span><span class="s0">and </span><span class="s1">computerf == </span><span class="s2">'innocent'</span><span class="s1">:</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'n' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'i'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'You guys are safe.'</span><span class="s1">)</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'n' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'g'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'Thank you for your contribution, we have to talk to your friend.'</span><span class="s1">)</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'y' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'i'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'You are arrested, follow me.'</span><span class="s1">)</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'y' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'g'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'Thank you for your contribution. Your friend is busted.'</span><span class="s1">)</span>
+<span class="s0">if </span><span class="s1">computer == </span><span class="s2">'innocence' </span><span class="s0">and </span><span class="s1">computerf == </span><span class="s2">'guilty'</span><span class="s1">:</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'n' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'i'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'We have to do some trial, you are arrested.'</span><span class="s1">)</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'n' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'g'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'Thank you for your contribution, you are both arrested.'</span><span class="s1">)</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'y' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'i'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'You are arrested, but with a reduced sentence for contribution.'</span><span class="s1">)</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'y' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'g'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'Thank you for your contribution, we have to talk to your friend.'</span><span class="s1">)</span>
+<span class="s0">if </span><span class="s1">computer == </span><span class="s2">'guilt' </span><span class="s0">and </span><span class="s1">computerf == </span><span class="s2">'guilty'</span><span class="s1">:</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'n' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'i'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'It is a lie. You both will be arrested, but your friend will have the sentence reduced'</span><span class="s1">)</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'n' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'g'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'You are busted.'</span><span class="s1">)</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'y' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'i'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'Thank you for your contribution. Part of it is a lie though.'</span><span class="s1">)</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'y' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'g'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'Thank you for your contribution. The judge has the discretion to impose a lesser sentence on you both.'</span><span class="s1">)</span>
+<span class="s0">if </span><span class="s1">computer == </span><span class="s2">'guilt' </span><span class="s0">and </span><span class="s1">computerf == </span><span class="s2">'innocent'</span><span class="s1">:</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'n' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'i'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'Thank you for your contribution. Part of it is a lie though. </span><span class="s0">\n</span><span class="s2">Your friend is arrested.'</span><span class="s1">)</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'n' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'g'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'You are free. Thanks for you contribution. </span><span class="s0">\n</span><span class="s2">Your friend is busted.'</span><span class="s1">)</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'y' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'i'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'You are both busted.'</span><span class="s1">)</span>
+    <span class="s0">if </span><span class="s1">person == </span><span class="s2">'y' </span><span class="s0">and </span><span class="s1">personc == </span><span class="s2">'g'</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">'Your friend lied, now is busted. </span><span class="s0">\n</span><span class="s2">You are arrested, but your sentence will decrease.'</span><span class="s1">)</span>
+<span class="s1">print(</span><span class="s2">'</span><span class="s0">\033</span><span class="s2">[m'</span><span class="s1">)</span>
+
+
+
+
+
+
+<span class="s2">'''import math 
+x = int(input('Quadrados preenchidos: ')) 
+a = 0 
+for c in range(1, x + 1): 
+    y = math.pow(2, c) 
+    a += y 
+print(f'A soma total é {a} grãos.')'''</span></pre>
+</body>
+</html>
